@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion </title>
+    <style>
+        /* Style général */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f4f5f7;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #3a9d43;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: #4CAF50;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        form input, form button {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #3a9d43;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table th, table td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f7f7f7;
+            color: #4CAF50;
+        }
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gestion Quincallerie Athanase</h1>
+    </header>
+    <nav>
+        <a href="#home">Accueil</a>
+        <a href="#products">Produits</a>
+        <a href="#clients">Clients</a>
+        <a href="#sales">Ventes</a>
+    </nav>
+    <main>
+        <!-- Section Accueil -->
+        <section id="home" class="section">
+            <h2>Bienvenue</h2>
+            <p>Bienvenue dans votre outil de gestion moderne pour commerce . Gagnez en efficacité dans la gestion de vos produits, clients et ventes.</p>
+        </section>
+
+        <!-- Section Produits -->
+        <section id="products" class="section">
+            <h2>Gestion des Produits</h2>
+            <form id="product-form">
+                <input type="text" id="product-name" placeholder="Nom du produit" required>
+                <input type="number" id="product-quantity" placeholder="Quantité" required>
+                <input type="number" id="product-price" placeholder="Prix (€)" required>
+                <button type="submit">Ajouter Produit</button>
+            </form>
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>Nom du Produit</th>
+                        <th>Quantité</th>
+                        <th>Prix (€)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section Clients -->
+        <section id="clients" class="section">
+            <h2>Gestion des Clients</h2>
+            <form id="client-form">
+                <input type="text" id="client-name" placeholder="Nom" required>
+                <input type="email" id="client-email" placeholder="Email" required>
+                <input type="tel" id="client-phone" placeholder="Téléphone" required>
+                <button type="submit">Ajouter Client</button>
+            </form>
+            <table id="client-table">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Téléphone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section Ventes -->
+        <section id="sales" class="section">
+            <h2>Historique des Ventes</h2>
+            <form id="sale-form">
+                <input type="date" id="sale-date" required>
+                <input type="text" id="sale-product" placeholder="Produit" required>
+                <input type="number" id="sale-quantity" placeholder="Quantité" required>
+                <input type="number" id="sale-amount" placeholder="Montant (€)" required>
+                <button type="submit">Ajouter Vente</button>
+            </form>
+            <table id="sale-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Produit</th>
+                        <th>Quantité</th>
+                        <th>Montant (€)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Gestion Pharmacie - Tous droits réservés.</p>
+    </footer>
+    <script>
+        // Gestion des produits
+        document.getElementById('product-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('product-name').value;
+            const quantity = document.getElementById('product-quantity').value;
+            const price = document.getElementById('product-price').value;
+
+            const row = `<tr><td>${name}</td><td>${quantity}</td><td>${price} €</td></tr>`;
+            document.getElementById('product-table').querySelector('tbody').innerHTML += row;
+
+            this.reset();
+        });
+
+        // Gestion des clients
+        document.getElementById('client-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('client-name').value;
+            const email = document.getElementById('client-email').value;
+            const phone = document.getElementById('client-phone').value;
+
+            const row = `<tr><td>${name}</td><td>${email}</td><td>${phone}</td></tr>`;
+            document.getElementById('client-table').querySelector('tbody').innerHTML += row;
+
+            this.reset();
+        });
+
+        // Gestion des ventes
+        document.getElementById('sale-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const date = document.getElementById('sale-date').value;
+            const product = document.getElementById('sale-product').value;
+            const quantity = document.getElementById('sale-quantity').value;
+            const amount = document.getElementById('sale-amount').value;
+
+            const row = `<tr><td>${date}</td><td>${product}</td><td>${quantity}</td><td>${amount} €</td></tr>`;
+            document.getElementById('sale-table').querySelector('tbody').innerHTML += row;
+
+            this.reset();
+        });
+    </script>
+</body>
+</html>
